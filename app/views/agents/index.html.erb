@@ -1,0 +1,25 @@
+<div id="app">
+ <h3>Add Agent</h3>
+ <div v-for="error in errors">
+ <p>{{error}}</p>
+ </div>
+ <p>Input Field Name:<input v-model='newAgent.field_name'></p>
+ <p>Input Base:<input v-model='newAgent.base'></p>
+ <p>Input Deployment Date:<input v-model='newAgent.deployment_date'></p>
+ <button v-on:click='addAgent()'>Submit</button>
+ <hr>
+ <p>Search Agents By Field Name<input v-model='searchName' list='names'></p>
+ <datalist id='names'>
+   <option v-for="agent in agents">{{agent.field_name}}</option>
+ </datalist>
+ <p>Search Agents By Base<input v-model='searchBase'></p>
+ <hr>
+ <button v-on:click="changeSortAttribute('field_name')">Sort by Field Name</button>
+ <button v-on:click="changeSortAttribute('base')">Sort by base</button>
+ <hr>
+  <div v-for="agent in modifiedAgents" v-if='conformsToSearch(agent)'>
+    <p v-on:click="toggleId(agent)">{{ agent.field_name }}</p>
+    <p>{{ agent.base }}</p>
+    <p v-if='agent.id_visible'>{{ agent.id }}</p>
+  </div>
+</div>
