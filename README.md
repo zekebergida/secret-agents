@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app features a versioned REST API consumed by a front end built
+in Vue.js
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There isn't really any design to the UI. Vue is being used here to for the 
+purpose of managing the DATA and performing CRUD operations that target
+the API.
